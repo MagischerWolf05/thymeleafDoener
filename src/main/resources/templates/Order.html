@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Order</title>
+</head>
+<body style="background: #FFFFFF">
+<div layout:fragment="content">
+    <div id="white_box_1_2" >
+        <h1 id class="soub"> <span style="color:#000000;">Dönner</span>
+            <span style="color: #008C15">Ankara</span></h1>
+    </div>
+
+    <div class="white_box_1">
+
+
+        <form action="#" th:action="@{/order}" th:object="${ModelOfUser}" method="post">
+
+            <p>Meat:
+                <select class="form-select" aria-label="Default select example" name="bread" th:field="*{alter}" required>
+                    <option value="">Please choose a Meat</option>
+                    <option value="Huhn">Huhn</option>
+                    <option value="Falafel">Falafel</option>
+                    <option value="Lamm">Lamm</option>
+
+                </select>
+            </p>
+            <p>Typ:
+                <select class="form-select" aria-label="Default select example" name="bread" th:field="*{name}" required>
+                    <option value="">Please choose a typ</option>
+                    <option value="box">Box</option>
+                    <option value="kepap">Kepap</option>
+                    <option value="Dueruem">Dürüm</option>
+
+                </select>
+            </p>
+            <p>
+                Sauce:
+                <select class="form-select" aria-label="Default select example" name="bread" th:field="*{fleisch}" required>
+                    <option value="">Please choose a sauce</option>
+                    <option value="scharf">Scharf</option>
+                    <option value="Cocktail">Cocktail</option>+
+                    <option value="yogurt">yogurt</option>
+                </select>
+            </p>
+            <p><div class="form-check">
+            Tomato:
+
+            <input class="form-check-input" type="checkbox" th:field="*{tomato}" />
+            </p></div>
+            <p>
+            <div class="form-check"> Salad:
+                <input class="form-check-input" type="checkbox"  th:field="*{salad}" />
+                </p></div>
+            <p>
+            <div class="form-check"> Salt and Pepper:
+                <input class="form-check-input" type="checkbox" th:field="*{zwibel}" />
+                </p></div>
+            <p>
+            <div class="d-grid gap-2">   <button type="submit" class="btn btn-primary" style="margin: 5px; background-color: #008938; border: #008C15">Order</button>
+            </div>
+            <div class="d-grid gap-2">   <button type="reset" class="btn btn-primary" style="margin: 5px; background-color: #008938; border: #008C15">Reset</button>
+            </div>
+            </p>
+        </form>
+    </div></div><div>
+</div></div>
+
+<th:block th:fragment="optional">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+</th:block>
+</div>
+</body>
+</html>
